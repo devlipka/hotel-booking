@@ -1,0 +1,11 @@
+.header {
+    list-style-type: none;
+    background-color: lightgrey;
+    padding: 15px;
+}
+.header a>li {
+    display: inline;
+    margin: 0;
+    padding: 10px;
+    border: grey 1px solid;
+}
