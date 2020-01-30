@@ -3,9 +3,23 @@
     background-color: lightgrey;
     padding: 15px;
 }
-.header a>li {
+.header>* {
     display: inline;
-    margin: 0;
-    padding: 10px;
-    border: grey 1px solid;
+    padding-left: 30%;
+}
+.hide {
+    display: none;
+}
+.sitiesUkraine {
+    background-color: grey;
+}
+.sitiesWorlds {
+    background-color: greenyellow;
+}
+.sitiesUkraine, .sitiesWorlds {
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+    padding: 5px;
+    width: 90%;
+    height: 10vw;
 }
