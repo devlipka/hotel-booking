@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Header.module.css';
 import { NavLink } from 'react-router-dom';
+import HeaderTopMenu from './HeaderTopMenu/HeaderTopMenu';
 
 export default class Header extends React.Component {
     constructor(props) {
@@ -22,6 +23,7 @@ export default class Header extends React.Component {
     render() {
         return (
             <header>
+                <HeaderTopMenu/>
                 <ul className={style.header}>
                     <li><a href="" onClick={this.handleClick}>Cities of the Ukraine</a></li>
                     <li><a href="" onClick={this.handleClick}>Cities of the World</a></li>
