@@ -1,12 +1,18 @@
 import React from 'react';
-import Header from './components/header/Header';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
+import HeaderContainer from './components/header/HeaderContainer';
+import store from './redux/redux-store';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <h1>HOTEL BOOKING</h1>
-    </div>
+    <BrowserRouter>
+      <Provider store={store}>
+        <div className="App">
+          <Route path="/" render={() => <HeaderContainer />} />
+        </div>
+      </Provider>
+    </BrowserRouter>
   );
 }
 

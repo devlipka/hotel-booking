@@ -3,7 +3,8 @@ import style from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 import HeaderTopMenu from './HeaderTopMenu/HeaderTopMenu';
 
-export default class Header extends React.Component {
+
+class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,15 +13,20 @@ export default class Header extends React.Component {
         }
     }
 
-    handleClick = (e) => {
-        e.preventDefault();
+    handleClick = event => {
+        event.preventDefault();
         this.setState({
             isUkraine: !this.state.isUkraine,
             isWorld: !this.state.isWorld
         })
-    }
+    };
 
     render() {
+        
+        const {
+          cities,
+        } = this.props;
+
         return (
             <header>
                 <HeaderTopMenu/>
@@ -29,30 +35,18 @@ export default class Header extends React.Component {
                     <li><a href="" onClick={this.handleClick}>Cities of the World</a></li>
                 </ul>
                 <div className={this.state.isUkraine ? style.hide : style.sitiesUkraine}>
-                    <NavLink to='/'>Kharkiv</NavLink>
-                    <NavLink to='/'>Kyev</NavLink>
-                    <NavLink to='/'>Donetsk</NavLink>
-                    <NavLink to='/'>Luhansk</NavLink>
-                    <NavLink to='/'>Vinnytsia</NavLink>
-                    <NavLink to='/'>Zhytomyr</NavLink>
-                    <NavLink to='/'>Kirovohrad</NavLink>
-                    <NavLink to='/'>Lutsk</NavLink>
-                    <NavLink to='/'>Lviv</NavLink>
-                    <NavLink to='/'>Odesa</NavLink>
+                   {cities.urainianСities.map((city, index) => (
+                       <NavLink to='/'>{city.city}</NavLink>
+                   ))}
                 </div>
                 <div className={this.state.isWorld ? style.hide : style.sitiesWorlds}>
-                    <NavLink to='/'>Paris</NavLink>
-                    <NavLink to='/'>Riga</NavLink>
-                    <NavLink to='/'>Donetsk</NavLink>
-                    <NavLink to='/'>Luhansk</NavLink>
-                    <NavLink to='/'>Vinnytsia</NavLink>
-                    <NavLink to='/'>Zhytomyr</NavLink>
-                    <NavLink to='/'>Kirovohrad</NavLink>
-                    <NavLink to='/'>Lutsk</NavLink>
-                    <NavLink to='/'>Lviv</NavLink>
-                    <NavLink to='/'>Odesa</NavLink>
+                   {cities.worldCities.map((city, index) => (
+                       <NavLink to='/'>{city.city}</NavLink>
+                   ))}
                 </div>
             </header>
         )
     }
 }
+
+export default Header;
