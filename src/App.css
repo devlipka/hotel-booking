@@ -1,0 +1,14 @@
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    color: #424242;
+    text-decoration: none;
+}
+button, input {
+    outline: none;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: #424242;
+}

@@ -1,4 +1,6 @@
 import React from 'react';
+import './Reset.css';
+import './App.css';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import HeaderContainer from './components/header/HeaderContainer';
