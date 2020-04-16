@@ -1,14 +1,16 @@
 import {combineReducers, createStore} from 'redux';
 import reducerTemplate from './reducer-template';
 import cities from './cities';
+import headerReducer from './header-reducer';
 
 
-let reducers = combineReducers({
+const reducers = combineReducers({
   reducerTemplate,
   cities,
+  headerReducer,
 });
 
-let store = createStore(reducers);
+const store = createStore(reducers);
 
 window.store = store;
 

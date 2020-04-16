@@ -40,10 +40,17 @@
     box-shadow: 0px 4px 7px 2px rgba(0,0,0,0.23);
     margin: 0 22px;
 }
+.button:active {
+    box-shadow: none;
+}
 .langSwitcher {
     position: relative;
 }
-.langSwitcher div {
+.langSwitcher:hover,
+.langSwitcher button:hover {
+    cursor: pointer;
+}
+.langDropdown {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -51,7 +58,7 @@
     -webkit-box-shadow: 0px 4px 7px 2px rgba(0,0,0,0.23);
     -moz-box-shadow: 0px 4px 7px 2px rgba(0,0,0,0.23);
     box-shadow: 0px 4px 7px 2px rgba(0,0,0,0.23);
-    top: 30px;
+    top: 20px;
     left: -15px;
     background-color: #ffffff;
     border-radius: 2px;
